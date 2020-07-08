@@ -10,7 +10,7 @@ namespace EFDbFirstApproachExample.CustomValidations
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             double price = Convert.ToDouble(value);
-            if(price %10 ==0)
+            if(price %10 == 0)
             {
                 return ValidationResult.Success;
             }
