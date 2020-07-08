@@ -54,7 +54,7 @@ namespace EFDbFirstApproachExample
 
             //create manager Role
 
-            if(roleManager.RoleExists("Manager"))
+            if(!roleManager.RoleExists("Manager"))
             {
                 var role = new IdentityRole();
                 role.Name = "Manager";
@@ -81,7 +81,7 @@ namespace EFDbFirstApproachExample
 
             //create customer Role
 
-            if (roleManager.RoleExists("Customer"))
+            if (!roleManager.RoleExists("Customer"))
             {
                 var role = new IdentityRole();
                 role.Name = "Customer";
