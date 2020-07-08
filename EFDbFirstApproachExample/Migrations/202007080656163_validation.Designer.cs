@@ -7,13 +7,13 @@ namespace EFDbFirstApproachExample.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class QuantityColumn : IMigrationMetadata
+    public sealed partial class validation : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(QuantityColumn));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(validation));
         
         string IMigrationMetadata.Id
         {
-            get { return "202007080011286_QuantityColumn"; }
+            get { return "202007080656163_validation"; }
         }
         
         string IMigrationMetadata.Source

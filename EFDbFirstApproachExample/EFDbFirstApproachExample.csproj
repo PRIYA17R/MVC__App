@@ -55,6 +55,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -137,6 +140,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -166,16 +174,30 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="CustomValidations\DivisibleBy10Attribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007080007075_InitialData.cs" />
-    <Compile Include="Migrations\202007080007075_InitialData.Designer.cs">
-      <DependentUpon>202007080007075_InitialData.cs</DependentUpon>
+    <Compile Include="HtmlHelpers\FileHelper.cs" />
+    <Compile Include="Migrations\202007080413222_InitialData.cs" />
+    <Compile Include="Migrations\202007080413222_InitialData.Designer.cs">
+      <DependentUpon>202007080413222_InitialData.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007080011286_QuantityColumn.cs" />
-    <Compile Include="Migrations\202007080011286_QuantityColumn.Designer.cs">
-      <DependentUpon>202007080011286_QuantityColumn.cs</DependentUpon>
+    <Compile Include="Migrations\202007080628326_RequiredValidation.cs" />
+    <Compile Include="Migrations\202007080628326_RequiredValidation.Designer.cs">
+      <DependentUpon>202007080628326_RequiredValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007080656163_validation.cs" />
+    <Compile Include="Migrations\202007080656163_validation.Designer.cs">
+      <DependentUpon>202007080656163_validation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007080709505_editRequiredValidation.cs" />
+    <Compile Include="Migrations\202007080709505_editRequiredValidation.Designer.cs">
+      <DependentUpon>202007080709505_editRequiredValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007080716189_editRequiredValidation1.cs" />
+    <Compile Include="Migrations\202007080716189_editRequiredValidation1.Designer.cs">
+      <DependentUpon>202007080716189_editRequiredValidation1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -212,11 +234,20 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007080007075_InitialData.resx">
-      <DependentUpon>202007080007075_InitialData.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007080413222_InitialData.resx">
+      <DependentUpon>202007080413222_InitialData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007080011286_QuantityColumn.resx">
-      <DependentUpon>202007080011286_QuantityColumn.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007080628326_RequiredValidation.resx">
+      <DependentUpon>202007080628326_RequiredValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007080656163_validation.resx">
+      <DependentUpon>202007080656163_validation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007080709505_editRequiredValidation.resx">
+      <DependentUpon>202007080709505_editRequiredValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007080716189_editRequiredValidation1.resx">
+      <DependentUpon>202007080716189_editRequiredValidation1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

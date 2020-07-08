@@ -18,9 +18,9 @@ namespace EFDbFirstApproachExample.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-            context.Brands.AddOrUpdate(new Models.Brand { BrandID = 1, BrandName = "Havaii" });
+            context.Brands.AddOrUpdate(new Models.Brand { BrandID = 1, BrandName = "Hawai" });
             context.Categories.AddOrUpdate(new Models.Category { CategoryID = 1, CategoryName = "Electronics" });
-            context.Products.AddOrUpdate(new Models.Product { ProductID = 1, ProductName = "Televison", BrandID = 1, CategoryID = 1, Price = 1000, Active = true });
+            context.Products.AddOrUpdate(new Models.Product { ProductID = 1, ProductName = "Television", Price = 1000, Active = true, BrandID= 1, CategoryID=1 });
         }
     }
 }

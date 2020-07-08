@@ -30,14 +30,15 @@ namespace EFDbFirstApproachExample.Migrations
                 c => new
                     {
                         ProductID = c.Long(nullable: false, identity: true),
-                        ProductName = c.String(),
-                        Price = c.Decimal(precision: 18, scale: 2),
+                        ProductName = c.String(nullable: false),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         DateOfPurchase = c.DateTime(),
                         AvailabilityStatus = c.String(),
                         CategoryID = c.Long(),
                         BrandID = c.Long(),
                         Active = c.Boolean(),
                         Photo = c.String(),
+                        Quantity = c.Decimal(precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => t.ProductID)
                 .ForeignKey("dbo.Brands", t => t.BrandID)
