@@ -5,6 +5,7 @@ using Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using EFDbFirstApproachExample.Identity;
 
 [assembly: OwinStartup(typeof(EFDbFirstApproachExample.Startup))]
 
@@ -16,6 +17,95 @@ namespace EFDbFirstApproachExample
         {
             app.UseCookieAuthentication(new CookieAuthenticationOptions() { AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie, LoginPath 
                 = new PathString("/Account/Login")});
+            this.CreateRolesAndUsers();
+        }
+
+        public void CreateRolesAndUsers()
+        {
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
+            var appDbContext = new ApplicationDbContext();
+            var appUserstore = new ApplicationUserStore(appDbContext);
+            var userManager = new ApplicationUserManager(appUserstore);
+
+            //Create Admin Role
+            if(!roleManager.RoleExists("Admin"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Admin";
+                roleManager.Create(role);
+
+            }
+
+            //create Admin user
+            if (userManager.FindByName("admin") == null)
+            {
+                var user = new ApplicationUser();
+                user.UserName = "Admin";
+                user.Email = "admin@gmail.com";
+                string userPassword = "admin123";
+                var chkUser = userManager.Create(user, userPassword);
+                if(chkUser.Succeeded)
+                {
+                    userManager.AddToRole(user.Id, "Admin");
+
+                }
+
+            }
+
+            //create manager Role
+
+            if(roleManager.RoleExists("Manager"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Manager";
+                roleManager.Create(role);
+
+            }
+
+            //Create Manger User
+
+            if(userManager.FindByName("Manager") == null)
+            {
+                var user = new ApplicationUser();
+                user.UserName = "Manager";
+                user.Email = "manager@gmail.com";
+                string userPassword = "manager123";
+                var chkUser = userManager.Create(user, userPassword);
+                if (chkUser.Succeeded)
+                {
+                    userManager.AddToRole(user.Id, "Manager");
+                }
+
+
+            }
+
+            //create customer Role
+
+            if (roleManager.RoleExists("Customer"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Customer";
+                roleManager.Create(role);
+
+            }
+
+            //Create Manger User
+
+            if (userManager.FindByName("Customer") == null)
+            {
+                var user = new ApplicationUser();
+                user.UserName = "Customer";
+                user.Email = "customer@gmail.com";
+                string userPassword = "customer123";
+                var chkUser = userManager.Create(user, userPassword);
+                if (chkUser.Succeeded)
+                {
+                    userManager.AddToRole(user.Id, "Customer");
+                }
+
+
+            }
+
         }
     }
 }

@@ -213,6 +213,10 @@
     <Compile Include="IdentityMigrations\202007080752444_Initial.Designer.cs">
       <DependentUpon>202007080752444_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="IdentityMigrations\202007081843339_CountryName.cs" />
+    <Compile Include="IdentityMigrations\202007081843339_CountryName.Designer.cs">
+      <DependentUpon>202007081843339_CountryName.cs</DependentUpon>
+    </Compile>
     <Compile Include="IdentityMigrations\Configuration.cs" />
     <Compile Include="Identity\ApplicationDbContext.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
@@ -276,6 +280,9 @@
   <ItemGroup>
     <EmbeddedResource Include="IdentityMigrations\202007080752444_Initial.resx">
       <DependentUpon>202007080752444_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdentityMigrations\202007081843339_CountryName.resx">
+      <DependentUpon>202007081843339_CountryName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007080413222_InitialData.resx">
       <DependentUpon>202007080413222_InitialData.cs</DependentUpon>

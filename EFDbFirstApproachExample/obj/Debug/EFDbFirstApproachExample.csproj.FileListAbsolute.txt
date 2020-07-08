@@ -324,3 +324,4 @@ C:\Priya\ASP_MVC5_Project\16.02.+Code-First+Approach\MVCApp\EFDbFirstApproachExa
 C:\Priya\ASP_MVC5_Project\16.02.+Code-First+Approach\MVCApp\EFDbFirstApproachExample\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Priya\ASP_MVC5_Project\16.02.+Code-First+Approach\MVCApp\EFDbFirstApproachExample\bin\Newtonsoft.Json.xml
 C:\Priya\ASP_MVC5_Project\16.02.+Code-First+Approach\MVCApp\EFDbFirstApproachExample\obj\Debug\EFDbFirstApproachExample.IdentityMigrations.Initial.resources
+C:\Priya\ASP_MVC5_Project\16.02.+Code-First+Approach\MVCApp\EFDbFirstApproachExample\obj\Debug\EFDbFirstApproachExample.IdentityMigrations.CountryName.resources
