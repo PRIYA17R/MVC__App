@@ -37,7 +37,7 @@ namespace EFDbFirstApproachExample
             }
 
             //create Admin user
-            if (userManager.FindByName("admin") == null)
+            if (userManager.FindByName("Admin") == null)
             {
                 var user = new ApplicationUser();
                 user.UserName = "Admin";

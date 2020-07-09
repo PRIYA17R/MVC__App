@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using EFDbFirstApproachExample.Models;
 
-namespace EFDbFirstApproachExample.Controllers
+namespace EFDbFirstApproachExample.Areas.Admin.Controllers
 {
     public class BrandsController : Controller
     {
