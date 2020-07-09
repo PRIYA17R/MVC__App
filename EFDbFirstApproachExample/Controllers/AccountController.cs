@@ -34,7 +34,7 @@ namespace EFDbFirstApproachExample.Controllers
                 {
                     Email = rvm.Email,
                     UserName = rvm.Username,
-                    PasswordHash = rvm.Password,
+                    PasswordHash = passwordHash,
                     Address = rvm.Address,
                     City = rvm.City,
                     Country = rvm.Country,
@@ -63,6 +63,49 @@ namespace EFDbFirstApproachExample.Controllers
             }
            
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(LoginViewModel lvm)
+        {
+            if (ModelState.IsValid)
+            {
+                var appDbContext = new ApplicationDbContext();
+                var userStore = new ApplicationUserStore(appDbContext);
+                var userManager = new ApplicationUserManager(userStore);
+                var user = userManager.Find(lvm.UserName, lvm.Password);
+                if(user!= null)
+                {
+                    var authenticationManager = HttpContext.GetOwinContext().Authentication;
+                    var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                    authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("myerror", "Invalid userName and password");
+                    return View();
+                }
+            }
+            else {
+                return View();
+            }
+            
+
+        }
+
+
+        public ActionResult Logout()
+        {
+            var authenticationManager = HttpContext.GetOwinContext().Authentication;
+            authenticationManager.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 
     }
